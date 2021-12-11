@@ -1,0 +1,20 @@
+*{
+    border: 0;
+    padding: 0;
+}
+
+body{
+    color: black;
+    background-image: url('../images/texture2.jpg');
+}
+
+.container{
+    border: 50px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(345px, 375px));
+    gap: 10px;
+}
