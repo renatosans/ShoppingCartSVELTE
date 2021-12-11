@@ -7,7 +7,6 @@
     import ProductCatalog from './componentes/ProductCatalog.svelte';
 
 
-    export let name;
     let dadosProdutos = [];
     let shoppingCart = { cliente:"Cliente 1", total: 0, produtosAdicionados: [] };
 
