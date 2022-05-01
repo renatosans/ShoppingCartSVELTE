@@ -2,6 +2,7 @@
 <script>
     import { onMount } from 'svelte';
     import { slide } from 'svelte/transition';
+    import { Button, Modal } from 'sveltestrap';
     import CartItem from './componentes/CartItem.svelte';
     import NumberSpinner from './componentes/NumberSpinner.svelte';
     import ProductCatalog from './componentes/ProductCatalog.svelte';
@@ -18,6 +19,9 @@
 	});
 
     let showItems = false;
+
+    let isOpen = false;
+    const toggle = () => (isOpen = !isOpen);
 </script>
 
 <style>
@@ -60,3 +64,14 @@
         {/each}
     {/if}
 </div>
+
+<!-- Button trigger modal -->
+<Button color="primary" on:click={toggle}>Hello World!</Button>
+
+<!-- Modal -->
+<Modal body {isOpen} {toggle} header="Hello World!">
+    <span>AGORA VAI</span>
+    <br/><br/>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+</Modal>
