@@ -39,9 +39,9 @@
             return;
         }
 
-        if (shoppingCart.produtosAdicionados.find(produto)) {
+        if (shoppingCart.produtosAdicionados.find( item => item.id === produto.id )) {
             let carrinho = shoppingCart.produtosAdicionados;
-            carrinho = carrinho.filter(item => item !== produto);
+            shoppingCart.produtosAdicionados = carrinho.filter( item => item.id !== produto.id );
             alert('O produto "' + produto.nome + '" foi removido do carrinho.');
         }
     }

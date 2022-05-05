@@ -46,7 +46,7 @@
     function addToCart(){
         let cartItem = shoppingCart.produtosAdicionados.find( item => item.id === produto.id );
         if (cartItem !== undefined){
-            alert('"Este produto já se encontra no carrinho!"');
+            alert('Este produto já se encontra no carrinho!');
             return;
         }
 
