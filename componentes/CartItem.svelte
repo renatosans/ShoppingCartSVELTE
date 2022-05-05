@@ -34,8 +34,13 @@
 
 
     function remover(){
-        let carrinho = shoppingCart.produtosAdicionados;
-        if (carrinho.find(produto)) {
+        if (shoppingCart == null) {
+            alert('Falha ao abrir carrinho de compras');
+            return;
+        }
+
+        if (shoppingCart.produtosAdicionados.find(produto)) {
+            let carrinho = shoppingCart.produtosAdicionados;
             carrinho = carrinho.filter(item => item !== produto);
             alert('O produto "' + produto.nome + '" foi removido do carrinho.');
         }
