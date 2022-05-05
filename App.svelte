@@ -59,7 +59,7 @@
     {#if showItems}
         {#each shoppingCart.produtosAdicionados as produto}
             <div transition:slide>
-                <CartItem produto={produto} quantidade=1></CartItem>
+                <CartItem produto={produto} shoppingCart={shoppingCart}></CartItem>
             </div>
         {/each}
     {/if}

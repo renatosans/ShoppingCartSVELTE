@@ -30,15 +30,19 @@
 
 
     export let produto;
-    export let quantidade;
+    export let shoppingCart;
 
 
     function remover(){
-        alert('O produto "' + produto.nome + '" foi removido do carrinho.');
+        let carrinho = shoppingCart.produtosAdicionados;
+        if (carrinho.find(produto)) {
+            carrinho = carrinho.filter(item => item !== produto);
+            alert('O produto "' + produto.nome + '" foi removido do carrinho.');
+        }
     }
 
     let showComponent = false;
-    if( (produto !== undefined) && (quantidade !== undefined) ) showComponent = true;
+    if( (produto !== undefined) && (shoppingCart !== undefined) ) showComponent = true;
 </script>
 
 {#if showComponent}
@@ -49,7 +53,7 @@
             <span>Preço: R$ {produto.preco}</span>
             <br/>
             <button style="width: 100px;" on:click={remover}><b>Remover</b></button>
-            <NumberSpinner currentCount={quantidade} ></NumberSpinner>
+            <NumberSpinner></NumberSpinner>
         </fieldset>
     </div>
 {/if}

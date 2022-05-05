@@ -17,7 +17,7 @@
 </style>
 
 <script>
-    export let currentCount;
+    export let currentCount = 1;
 
     function increase(){
         currentCount++;
