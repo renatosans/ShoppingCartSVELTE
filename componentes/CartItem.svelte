@@ -26,6 +26,7 @@
 </style>
 
 <script>
+    import InfoModal from './InfoModal.svelte';
     import NumberSpinner from './NumberSpinner.svelte';
 
 
@@ -42,7 +43,11 @@
         if (shoppingCart.produtosAdicionados.find( item => item.id === produto.id )) {
             let carrinho = shoppingCart.produtosAdicionados;
             shoppingCart.produtosAdicionados = carrinho.filter( item => item.id !== produto.id );
-            alert('O produto "' + produto.nome + '" foi removido do carrinho.');
+            let infoModal = new InfoModal({ 
+                target: this, 
+                props: { modalContent: 'O produto "' + produto.nome + '" foi removido do carrinho.'}
+            });
+            infoModal.toggle();
         }
     }
 
