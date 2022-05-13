@@ -40,18 +40,28 @@
 </style>
 
 <script>
+    import InfoModal from './InfoModal.svelte';
+
     export let produto;
     export let shoppingCart;
 
     function addToCart(){
         let cartItem = shoppingCart.produtosAdicionados.find( item => item.id === produto.id );
         if (cartItem !== undefined){
-            alert('Este produto já se encontra no carrinho!');
+            let infoModal = new InfoModal({ 
+                target: this, 
+                props: { modalContent: 'O produto já se encontra no carrinho!'}
+            });
+            infoModal.toggle();
             return;
         }
 
         shoppingCart.produtosAdicionados.push(produto);
-        alert('Produto adicionado ao carrinho.');
+        let infoModal = new InfoModal({
+            target: this,
+            props: { modalContent: 'Produto adicionado ao carrinho.'}
+        });
+        infoModal.toggle();
     }
 
     let showComponent = false;
