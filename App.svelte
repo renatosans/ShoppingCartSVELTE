@@ -1,7 +1,6 @@
 
 <script>
     import { onMount } from 'svelte';
-    import { slide } from 'svelte/transition';
     import { Button, Modal, Offcanvas } from 'sveltestrap';
     import CartItem from './componentes/CartItem.svelte';
     import ProductCatalog from './componentes/ProductCatalog.svelte';
@@ -62,9 +61,7 @@
     {#if showItems}
     <Offcanvas isOpen={showItems} toggle={toggle} placement="end" header="Cart">
         {#each shoppingCart.produtosAdicionados as produto}
-            <div transition:slide>
-                <CartItem produto={produto} shoppingCart={shoppingCart}></CartItem>
-            </div>
+            <CartItem produto={produto} shoppingCart={shoppingCart}></CartItem>
         {/each}
     </Offcanvas>
     {/if}
