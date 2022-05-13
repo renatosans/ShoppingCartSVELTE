@@ -66,9 +66,3 @@
     </Offcanvas>
     {/if}
 </div>
-
-<Offcanvas isOpen={isOpen} toggle={toggle} placement="end" header="Cart">
-    {#each shoppingCart.produtosAdicionados as produto}
-        <CartItem produto={produto} shoppingCart={shoppingCart}></CartItem>
-    {/each}
-</Offcanvas>    
