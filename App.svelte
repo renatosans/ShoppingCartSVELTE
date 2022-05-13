@@ -17,7 +17,7 @@
 	});
 
     let showItems = false;
-    const toggle = () => (isOpen = !isOpen);
+    const toggle = () => (showItems = !showItems);
 </script>
 
 <style>
@@ -39,9 +39,9 @@
     }
 </style>
 
-<!-- Triggers the shopping cart -->
+<!-- triggers the shopping cart -->
 <a on:click={toggle} href={null} >
-    <i class="fas fa-shopping-cart b-bar-icon" style="color:blue"></i>
+    <i class="fas fa-shopping-cart fa-lg" style="color:blue"></i>
 </a>
 
 <main>
@@ -55,7 +55,6 @@
 </main>
 
 <div class="cart">
-    <input type="checkbox" class="fas fa-shopping-cart b-bar-icon" bind:checked={showItems}>
     {#if showItems}
     <Offcanvas isOpen={showItems} toggle={toggle} placement="end" header="Cart">
         {#each shoppingCart.produtosAdicionados as produto}
