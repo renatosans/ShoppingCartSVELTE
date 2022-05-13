@@ -43,6 +43,11 @@
     }
 </style>
 
+<!-- Triggers the shopping cart -->
+<a on:click={toggle} href={null} >
+    <i class="fas fa-shopping-cart b-bar-icon" style="color:blue"></i>
+</a>
+
 <main>
     <div class="container">
         <div id="grid" class="grid">
@@ -64,9 +69,6 @@
     {/if}
 </div>
 
-<!-- Trigger Button -->
-<Button color="primary" on:click={toggle}>Open</Button>
-
 <!--
 <Modal body {isOpen} {toggle} header="Hello World!">
     <span>Produto adicionado ao carrinho.</span>
@@ -76,7 +78,8 @@
 </Modal>
 -->
 
-<Offcanvas isOpen={isOpen} toggle={toggle} placement="top" header="Cart">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
-</Offcanvas>
+<Offcanvas isOpen={isOpen} toggle={toggle} placement="end" header="Cart">
+    {#each shoppingCart.produtosAdicionados as produto}
+        <CartItem produto={produto} shoppingCart={shoppingCart}></CartItem>
+    {/each}
+</Offcanvas>    
