@@ -69,15 +69,6 @@
     {/if}
 </div>
 
-<!--
-<Modal body {isOpen} {toggle} header="Hello World!">
-    <span>Produto adicionado ao carrinho.</span>
-    <br/><br/>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-primary">Save changes</button>
-</Modal>
--->
-
 <Offcanvas isOpen={isOpen} toggle={toggle} placement="end" header="Cart">
     {#each shoppingCart.produtosAdicionados as produto}
         <CartItem produto={produto} shoppingCart={shoppingCart}></CartItem>
