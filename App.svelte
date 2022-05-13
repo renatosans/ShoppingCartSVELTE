@@ -17,8 +17,6 @@
 	});
 
     let showItems = false;
-
-    let isOpen = false;
     const toggle = () => (isOpen = !isOpen);
 </script>
 
