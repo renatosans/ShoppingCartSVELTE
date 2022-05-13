@@ -26,17 +26,6 @@
         top: 0;
         right: 0;
     }
-
-    input[type="checkbox"] {
-        width: 30px;
-        height: 30px;
-        appearance: none;
-        color: blue;
-    }
-
-    input[type="checkbox"]:checked {
-        color: orange;
-    }
 </style>
 
 <!-- triggers the shopping cart -->
