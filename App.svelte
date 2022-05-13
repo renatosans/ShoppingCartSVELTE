@@ -2,9 +2,8 @@
 <script>
     import { onMount } from 'svelte';
     import { slide } from 'svelte/transition';
-    import { Button, Modal } from 'sveltestrap';
+    import { Button, Modal, Offcanvas } from 'sveltestrap';
     import CartItem from './componentes/CartItem.svelte';
-    import NumberSpinner from './componentes/NumberSpinner.svelte';
     import ProductCatalog from './componentes/ProductCatalog.svelte';
 
 
@@ -65,13 +64,19 @@
     {/if}
 </div>
 
-<!-- Button trigger modal -->
-<Button color="primary" on:click={toggle}>Hello World!</Button>
+<!-- Trigger Button -->
+<Button color="primary" on:click={toggle}>Open</Button>
 
-<!-- Modal -->
+<!--
 <Modal body {isOpen} {toggle} header="Hello World!">
     <span>Produto adicionado ao carrinho.</span>
     <br/><br/>
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
     <button type="button" class="btn btn-primary">Save changes</button>
 </Modal>
+-->
+
+<Offcanvas isOpen={isOpen} toggle={toggle} placement="top" header="Cart">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+</Offcanvas>
