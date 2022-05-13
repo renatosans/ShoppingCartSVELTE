@@ -60,11 +60,13 @@
 <div class="cart">
     <input type="checkbox" class="fas fa-shopping-cart b-bar-icon" bind:checked={showItems}>
     {#if showItems}
+    <Offcanvas isOpen={showItems} toggle={toggle} placement="end" header="Cart">
         {#each shoppingCart.produtosAdicionados as produto}
             <div transition:slide>
                 <CartItem produto={produto} shoppingCart={shoppingCart}></CartItem>
             </div>
         {/each}
+    </Offcanvas>
     {/if}
 </div>
 
