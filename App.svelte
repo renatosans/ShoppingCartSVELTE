@@ -31,11 +31,11 @@
         width: 30px;
         height: 30px;
         appearance: none;
-        background-color: white;
+        color: blue;
     }
 
     input[type="checkbox"]:checked {
-        background-color: green;
+        color: orange;
     }
 </style>
 
