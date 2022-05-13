@@ -25,13 +25,15 @@
         position: fixed;
         top: 0;
         right: 0;
+        color: blue;
     }
 </style>
+
 
 <!-- triggers the shopping cart -->
 <div class="cart">
     <a on:click={toggle} href={null} >
-        <i class="fas fa-shopping-cart fa-lg" style="color:blue"></i>
+        <i class="fas fa-shopping-cart fa-lg"></i>
     </a>
 </div>
 
