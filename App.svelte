@@ -35,7 +35,6 @@
         height: 30px;
         appearance: none;
         background-color: white;
-        background-image: url('./icons/cart.svg');
     }
 
     input[type="checkbox"]:checked {
@@ -59,7 +58,7 @@
 </main>
 
 <div class="cart">
-    <input type="checkbox" bind:checked={showItems}>
+    <input type="checkbox" class="fas fa-shopping-cart b-bar-icon" bind:checked={showItems}>
     {#if showItems}
         {#each shoppingCart.produtosAdicionados as produto}
             <div transition:slide>
