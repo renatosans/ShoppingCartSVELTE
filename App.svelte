@@ -29,9 +29,11 @@
 </style>
 
 <!-- triggers the shopping cart -->
-<a on:click={toggle} href={null} >
-    <i class="fas fa-shopping-cart fa-lg" style="color:blue"></i>
-</a>
+<div class="cart">
+    <a on:click={toggle} href={null} >
+        <i class="fas fa-shopping-cart fa-lg" style="color:blue"></i>
+    </a>
+</div>
 
 <main>
     <div class="container">
@@ -43,12 +45,10 @@
     </div>
 </main>
 
-<div class="cart">
-    {#if showItems}
-    <Offcanvas isOpen={showItems} toggle={toggle} placement="end" header="Cart">
-        {#each shoppingCart.produtosAdicionados as produto}
-            <CartItem produto={produto} shoppingCart={shoppingCart}></CartItem>
-        {/each}
-    </Offcanvas>
-    {/if}
-</div>
+{#if showItems}
+<Offcanvas isOpen={showItems} toggle={toggle} placement="end" header="Cart">
+    {#each shoppingCart.produtosAdicionados as produto}
+        <CartItem produto={produto} shoppingCart={shoppingCart}></CartItem>
+    {/each}
+</Offcanvas>
+{/if}
