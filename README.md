@@ -1,3 +1,2 @@
 # ShoppingCartSVELTE
-
-Carrinho de compras em SVELTE
+<b>Carrinho de compras em SVELTE</b>
