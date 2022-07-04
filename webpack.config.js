@@ -13,7 +13,10 @@ module.exports = {
     },
     extensions: ['.mjs', '.js', '.svelte'],
     mainFields: ['svelte', 'browser', 'module', 'main']
-  },  
+  },
+  devServer: {
+    port: 3000
+  },
   module: {
     rules: [
       {
